@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════════════════════════════
-   ORION — Orbital Conjunction Assessment
+   ORBITX — Orbital Conjunction Assessment
    Aerospace HUD design system.
    Palette: black / graphite / silver / white as base.
    Color is reserved for meaning only:
@@ -149,6 +149,7 @@ button { font: inherit; color: inherit; cursor: pointer; }
   flex-direction: column;
   line-height: 1.1;
 }
+.wordmark-orbitx,
 .wordmark-orion {
   font-family: var(--mono);
   font-size: 15px;

@@ -1,4 +1,4 @@
-# ORION — Orbital Conjunction Assessment & Decision-Support System
+# ORBITX — Orbital Conjunction Assessment & Decision-Support System
 
 > **Explainable Orbital Decision-Support Prototype**  
 > Transforms orbital conjunction events into physically simulated maneuver candidates, evaluates safety-versus-cost tradeoffs deterministically, recommends optimal avoidance strategies, and verifies post-maneuver clearance through numerical orbital propagation.
@@ -7,7 +7,7 @@
 
 ## 1. Project Overview & Positioning
 
-**ORION** is designed as an **explainable orbital decision-support system** for satellite conjunction assessment. In modern Low Earth Orbit (LEO) operations, satellite operators face thousands of close approach notifications weekly. ORION bridges the gap between raw orbital ephemerides and actionable flight decisions by providing transparent, deterministic evaluation of collision avoidance maneuvers (CAM).
+**ORBITX** is designed as an **explainable orbital decision-support system** for satellite conjunction assessment. In modern Low Earth Orbit (LEO) operations, satellite operators face thousands of close approach notifications weekly. ORBITX bridges the gap between raw orbital ephemerides and actionable flight decisions by providing transparent, deterministic evaluation of collision avoidance maneuvers (CAM).
 
 ### Core Pipeline
 $$\text{DETECT} \longrightarrow \text{ANALYZE} \longrightarrow \text{SIMULATE} \longrightarrow \text{COMPARE} \longrightarrow \text{DECIDE} \longrightarrow \text{EXECUTE} \longrightarrow \text{VERIFY}$$
@@ -20,13 +20,13 @@ $$\text{DETECT} \longrightarrow \text{ANALYZE} \longrightarrow \text{SIMULATE} \
 6. **EXECUTE**: Applies the selected impulsive maneuver to the state vector at the planned burn epoch.
 7. **VERIFY**: Re-propagates the perturbed orbit, recalculates closest approach, and visualizes verified clearance or collision consequences.
 
-> **Operational Scope Disclaimer**: ORION is a prototype developed for technical demonstration and decision support. It is **not** operational flight software or certified safety-of-flight tooling.
+> **Operational Scope Disclaimer**: ORBITX is a prototype developed for technical demonstration and decision support. It is **not** operational flight software or certified safety-of-flight tooling.
 
 ---
 
 ## 2. Real vs. Simulated Data Separation
 
-To maintain scientific integrity, ORION maintains a strict distinction between real retrieved data and simulated demonstration elements:
+To maintain scientific integrity, ORBITX maintains a strict distinction between real retrieved data and simulated demonstration elements:
 
 | Category | Real Elements | Simulated / Synthetic Elements |
 | :--- | :--- | :--- |
@@ -39,7 +39,7 @@ To maintain scientific integrity, ORION maintains a strict distinction between r
 
 ## 3. Scientific Method & Implemented Equations
 
-ORION only documents and presents equations that are **actually implemented** in the codebase.
+ORBITX only documents and presents equations that are **actually implemented** in the codebase.
 
 ### 3.1. Orbital Propagation (SGP4 + RK4 with $J_2$)
 - **Initial Orbit**: SGP4 (Simplified General Perturbations 4) analytical model propagates General Perturbations (GP) mean elements from epoch to the simulation target window.
@@ -114,8 +114,8 @@ $$\text{Decision Score} = w_{\text{safety}} \cdot S_{\text{safety}} + w_{\Delta 
 ## 5. Risk Assessment Terminology
 
 In adherence to aerospace rigor:
-- **ORION does not claim a covariance-based Probability of Collision ($P_c$)**. A true $P_c$ requires full operational state error covariance matrices ($\mathbf{C}_{\text{pri}}, \mathbf{C}_{\text{sec}}$) combined into encounter b-plane error ellipses via Foster-1992 or Akella-Alfriend algorithms.
-- Instead, ORION reports a **Simulation Risk Score (0–100)** derived deterministically from:
+- **ORBITX does not claim a covariance-based Probability of Collision ($P_c$)**. A true $P_c$ requires full operational state error covariance matrices ($\mathbf{C}_{\text{pri}}, \mathbf{C}_{\text{sec}}$) combined into encounter b-plane error ellipses via Foster-1992 or Akella-Alfriend algorithms.
+- Instead, ORBITX reports a **Simulation Risk Score (0–100)** derived deterministically from:
   1. Miss distance relative to the $1.0\text{ km}$ safety perimeter.
   2. Relative encounter kinetic energy index ($E_{\text{rel}} \propto \frac{1}{2} v_{\text{rel}}^2$).
 
